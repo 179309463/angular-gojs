@@ -1,12 +1,15 @@
 angular.module('ableApp')
 
-    .directive('diagramDirective', function() {
+    .directive('diagramDirective',['$state','$stateParams', function($state,$stateParams) {
+      var state = $state;
       return {
+
         restrict: 'E',
         template: '<div></div>',  // just an empty DIV element
         replace: true,
         scope: { model: '=goModel' },
-        link: function(scope, element, attrs) {
+        link: function(scope, element, attrs, $state) {
+          // var state = $state;
           var $ = go.GraphObject.make;
           var diagram =  // create a Diagram for the given HTML DIV element
             $(go.Diagram, element[0],
@@ -23,14 +26,15 @@ angular.module('ableApp')
                                   new go.Binding("source","source")),
                                 $(go.TextBlock, "Default Text",
                                   { margin: 12, stroke: "white", font: "bold 16px sans-serif" },
-                                  new go.Binding("text", "Name")),
+                                  new go.Binding("text", "name")),
                                 {
-                                    // doubleClick: function(e, obj) { console.log("Clicked on " + obj.part.data.key);
-                                    // editData();
+                                    doubleClick: function(e, obj,$state,$stateParams) { 
+                                    var asset = obj.part.data.key;  
+                                    console.log("Clicked on " + asset);
+                                    state.go("diagram.asset", { id: asset }); //change state in UI router and pass in the asset for the id param 
+                                    // diagram.model.addNodeData({ key: "5", parent: obj.part.data.key, name: "test",    source: "cat2.png" }); 
 
-                                    // model.addNodeData({ key: "5", parent: obj.part.data.key, name: "test",    source: "cat2.png" }); 
-
-                                  //}
+                                  }
                                 }
                               )
 
@@ -73,4 +77,4 @@ angular.module('ableApp')
           });
         }
       };
-    })
+    }])

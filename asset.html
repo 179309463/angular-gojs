@@ -1,1 +1,61 @@
-Asset
+
+  <form class="pure-form pure-form-stacked">
+        <fieldset>
+            <legend>{{asset.name}}</legend>
+            <div class="pure-g">
+                <div class="pure-u-1-3">
+                    <label for="Name">Name</label>
+                    <input id="name" type="text" value = {{asset.name}}>
+                </div>
+
+                <div class="pure-u-1-3">
+                    <label for="templateRef">Template Ref</label>
+                    <input id="templateRef" type="text" value = {{asset.templateRef}}>
+                </div>
+
+                <div class="pure-u-1-3">
+                    <label for="reasonList">Reason List</label>
+                    <input id="reasonList" type="text" value = {{asset.reasonList}}>
+                </div>
+
+                <div class="pure-u-1-3">
+                    <label for="defaultPLC">Default PLC</label>
+                    <input id="defaultPLC" type="text" value = {{asset.defaultPLC}}>
+                </div>
+
+                <div class="pure-u-1-3">
+                    <label for="scanPriority">Primary Ref</label>
+                    <input id="scanPriority" type="text" value = {{asset.scanPriority}}>
+                </div>
+
+
+                <div class="pure-u-1-3">
+                    <label for="area">Area</label>
+                    <input id="area" type="text" value = {{asset.area}}>
+                </div>
+
+                <div class="pure-u-1-3">
+                    <label for="scanPriority">Scan Priority</label>
+                    <input id="scanPriority" type="text" value = {{asset.scanPriority}}>
+                </div>
+
+                <div class="pure-u-1-3">
+                    <label for="deviceName">Device Name</label>
+                    <input id="deviceName" type="text" value = {{asset.deviceName}}>
+                </div>
+
+                <div class="pure-u-1-3">
+                    <label for="type">Type</label>
+                    <input id="type" type="text" value = {{asset.type}}>
+                </div>
+
+            </div>
+            <br>
+            <button type="submit" class="pure-button pure-button-primary">Submit</button> 
+            <button ng-click="cancel()" class="pure-button pure-button-active">Cancel</button>
+
+
+
+        </fieldset>
+    </form>
+<!-- </div> -->

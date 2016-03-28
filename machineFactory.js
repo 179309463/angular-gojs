@@ -5,51 +5,101 @@ angular.module('ableApp')
 
 		var machineData = [
 			{
-				"key": "Machine1" ,
+				"key": "Packer" ,
 				"parent": "none",
-				"Name": "Machine1" ,
-				"DefaultPLC": "",
+				"name": "Packer" ,
+				"defaultPLC": "Packer_PLC",
 				"scanPriority" :""  ,
 				"templateRef":"" ,
 				"primaryRef":"" ,
 				"deviceName":"" ,
 				"reasonList":"" ,
-				"Area":"" ,
-				"Type":"" ,
-				"Conditions": [
+				"area":"Packaging" ,
+				"type":"LINE" ,
+				"conditions": [
 					{
-						"Name": "", 
-						"Description": "",
+						"name": "", 
+						"description": "",
 						"stateKey": ""
 					},
 					{
-						"Name": "", 
-						"Description": "",
+						"name": "", 
+						"description": "",
 						"stateKey": ""
 					}
 				]
 			},
 			{
-				"key": "Machine2",
-				"parent": "Machine1",
-				"Name": "Machine2" ,
-				"DefaultPLC": "",
-				"scanPriority" :""  ,
+				"key": "Conveyer",
+				"parent": "Packer",
+				"name": "Conveyer" ,
+				"defaultPLC": "Conveyer_PLC",
+				"scanPriority" : ""  ,
 				"templateRef":"" ,
 				"primaryRef":"" ,
 				"deviceName":"" ,
 				"reasonList":"" ,
-				"Area":"" ,
-				"Type":"" ,
-				"Conditions": [
+				"area":"Packaging" ,
+				"type":"LINE" ,
+				"conditions": [
 					{
-						"Name": "", 
-						"Description": "",
+						"name": "", 
+						"description": "",
 						"stateKey": ""
 					},
 					{
-						"Name": "", 
-						"Description": "",
+						"name": "", 
+						"description": "",
+						"stateKey": ""
+					}
+				]
+			},
+			{
+				"key": "Palletizer1",
+				"parent": "Conveyer",
+				"name": "Palletizer1" ,
+				"defaultPLC": "Palletizer_PLC",
+				"scanPriority" : ""  ,
+				"templateRef":"" ,
+				"primaryRef":"" ,
+				"deviceName":"" ,
+				"reasonList":"" ,
+				"area":"Packaging" ,
+				"type":"LINE" ,
+				"conditions": [
+					{
+						"name": "", 
+						"description": "",
+						"stateKey": ""
+					},
+					{
+						"name": "", 
+						"description": "",
+						"stateKey": ""
+					}
+				]
+			},
+			{
+				"key": "Palletizer2",
+				"parent": "Conveyer",
+				"name": "Palletizer2" ,
+				"defaultPLC": "Palletizer_PLC",
+				"scanPriority" : ""  ,
+				"templateRef":"" ,
+				"primaryRef":"" ,
+				"deviceName":"" ,
+				"reasonList":"" ,
+				"area":"Packaging" ,
+				"type":"LINE" ,
+				"conditions": [
+					{
+						"name": "", 
+						"description": "",
+						"stateKey": ""
+					},
+					{
+						"name": "", 
+						"description": "",
 						"stateKey": ""
 					}
 				]
